@@ -1,0 +1,38 @@
+html, body {
+  font-family: 'Special Elite'
+}
+
+/* Page title */
+h1 {
+  text-decoration: underline;
+  margin: 16px 0;
+}
+
+/* Description under page tilte */
+blockquote {
+  margin: 16px 0;
+}
+
+table, th, td {
+  box-sizing: border-box;
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid black;
+  padding: 4px;
+}
+
+tbody {
+  border-top: 1px solid black;
+}
+
+
+
+/* Assisters */
+strong {
+  -webkit-text-stroke: .5px black;
+}
+u {
+  text-decoration: underline;
+}
