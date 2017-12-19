@@ -1,0 +1,36 @@
+{
+  "name": "bomb-defusal-manual-generator",
+  "version": "1.0.0",
+  "description": "Generate Bomb Defusal Manual Pages",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha test/**/*.js --ui bdd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/trs/bomb-defusal-manual-generator.git"
+  },
+  "keywords": [
+    "Keep",
+    "Taking",
+    "and",
+    "Nobody",
+    "Explodes"
+  ],
+  "author": "Tyler Stewart",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/trs/bomb-defusal-manual-generator/issues"
+  },
+  "homepage": "https://github.com/trs/bomb-defusal-manual-generator#readme",
+  "dependencies": {
+    "markdown-it": "^8.4.0",
+    "markdown-it-underline": "^1.0.1",
+    "puppeteer": "^0.13.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^4.13.1",
+    "mocha": "^4.0.1"
+  }
+}
