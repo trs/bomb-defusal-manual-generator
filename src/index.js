@@ -1,19 +1,21 @@
 const fs = require('fs');
 const path = require('path');
 const { URL } = require('url');
-const underline = require('markdown-it-underline');
-const markdown = require('markdown-it')().use(underline);
 const puppeteer = require('puppeteer');
 
+const {parseMarkdown} = require('./markdown');
+
 async function generateManual(fileMd, {
+  name = 'Mod',
+  version = 'Mod',
   outputPdf = './page.pdf'
 } = {}) {
   const sourceMd = await _readFile(fileMd);
-  const sourceHtml = markdown.render(sourceMd);
-  const html = _buildHtmlPage(sourceHtml, {
-    html: true,
-    xhtmlOut: true,
-    breaks: true
+  const sourceHtml = parseMarkdown(sourceMd);
+  const html = await _buildHtmlPage({
+    body: sourceHtml,
+    name,
+    version
   });
   const fileHtml = await _writeFile('./.temp.html', html);
   const urlHtml = new URL(fileHtml, 'file://');
@@ -29,18 +31,13 @@ async function generateManual(fileMd, {
   ]);
 }
 
-function _buildHtmlPage(body) {
-  return `<!DOCTYPE html>
-  <html>
-    <head>
-      <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
-      <link rel="stylesheet" type="text/css" href="./src/style.css">
-    </head>
-    <body>
-      ${body}
-    </body>
-  </html>
-  `;
+async function _buildHtmlPage(settings) {
+  const baseHtml = await _readFile('./src/base.html');
+
+  return baseHtml
+    .replace('{{body}}', settings.body)
+    .replace('{{version}}', settings.version)
+    .replace('{{name}}', settings.name);
 }
 
 async function _deleteFile(path) {

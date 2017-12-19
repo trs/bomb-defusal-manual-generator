@@ -1,16 +1,32 @@
 html, body {
-  font-family: 'Special Elite'
+  font-family: 'Special Elite';
+  line-height: 1.4;
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
 }
 
 /* Page title */
-h1 {
+h2 {
   text-decoration: underline;
-  margin: 16px 0;
+  font-size: 1.5em;
+  margin: 0.83em 0 0;
+  -webkit-text-stroke: .5px black;
+}
+
+h3 {
+  text-decoration: underline;
+  font-size: 1.17em;
+  margin: 1em 0 0;
+  -webkit-text-stroke: .5px black;
 }
 
 /* Description under page tilte */
 blockquote {
-  margin: 16px 0;
+  font-style: italic;
+  font-size:75%;
+  margin: 0;
+  margin-top: .5em;
 }
 
 table, th, td {
@@ -19,15 +35,52 @@ table, th, td {
 
 table {
   border-collapse: collapse;
-  border: 1px solid black;
-  padding: 4px;
+  /* border: 1px solid black; */
 }
 
 tbody {
-  border-top: 1px solid black;
+  border: 1px solid black;
+  padding: 8px;
 }
 
+td {
+  padding: 0 8px;
+}
 
+/* Classes */
+.page {
+  margin: 0 auto;
+  padding: 0;
+  clear: both;
+  background-color: #FFF;
+  background-repeat: no-repeat;
+  background-position: center; 
+  background-size: 100%;
+  width: 51em; /* = 8.5in at 12pt (1em) */
+  min-height: 66em; /* = 11in at 12pt (1em) */
+}
+
+.page-content {
+  margin: 4.5em 8.82% 0; /* = 0.75in ~0.75in 0 at 12pt (1em) */
+  min-height: 57em; /* Leaving 3em at the bottom for footer (0.75in) */
+}
+
+.page-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  height: 0;
+  top: 1.5em; /* = 0.25in at 12pt (1em) */
+  margin: 0 5.88%; /* = ~0.5in at 12pt (1em) */
+}
+
+.diagram {
+  width: 9em;
+  float: right;
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
 
 /* Assisters */
 strong {
