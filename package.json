@@ -25,6 +25,8 @@
   "homepage": "https://github.com/trs/bomb-defusal-manual-generator#readme",
   "dependencies": {
     "markdown-it": "^8.4.0",
+    "markdown-it-attrs": "^1.2.0",
+    "markdown-it-multimd-table": "^3.0.0",
     "markdown-it-underline": "^1.0.1",
     "puppeteer": "^0.13.0"
   },
