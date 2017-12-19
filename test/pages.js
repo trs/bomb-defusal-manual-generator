@@ -6,7 +6,25 @@ const app = require('../src');
 describe('#Pages', function () {
   it('On the Subject of Wires' , async function () {
     await app.generateManual('./pages/wires.md', {
+      name: 'Wires',
+      version: 'v. 1',
       outputPdf: './pages/wires.pdf'
+    });
+  });
+
+  it('On the Subject of The Button' , async function () {
+    await app.generateManual('./pages/the_button.md', {
+      name: 'The Button',
+      version: 'v. 1',
+      outputPdf: './pages/the_button.pdf'
+    });
+  });
+
+  it('On the Subject of Keypads' , async function () {
+    await app.generateManual('./pages/keypads.md', {
+      name: 'Keypads',
+      version: 'v. 1',
+      outputPdf: './pages/keypads.pdf'
     });
   });
 });
