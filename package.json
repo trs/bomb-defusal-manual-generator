@@ -1,10 +1,17 @@
 {
-  "name": "bomb-defusal-manual-generator",
+  "name": "defusal",
   "version": "1.0.0",
   "description": "Generate Bomb Defusal Manual Pages",
   "main": "src/index.js",
+  "bin": {
+    "defusal": "bin/index.js"
+  },
+  "files": [
+    "bin/",
+    "src/"
+  ],
   "scripts": {
-    "test": "mocha test/**/*.js --ui bdd"
+    "test": "mocha test/**/*.spec.js --timeout 0 --ui bdd"
   },
   "repository": {
     "type": "git",
@@ -24,6 +31,7 @@
   },
   "homepage": "https://github.com/trs/bomb-defusal-manual-generator#readme",
   "dependencies": {
+    "commander": "^2.12.2",
     "markdown-it": "^8.4.0",
     "markdown-it-attrs": "^1.2.0",
     "markdown-it-multimd-table": "^3.0.0",
