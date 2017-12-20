@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/trs/bomb-defusal-manual-generator">
-    <img alt="ktane" src="./logo.png"  />
+    <img alt="ktane" src="./img/logo.png"  />
   </a>
 </p>
 

@@ -1,4 +1,4 @@
-![Diagram](./test/img/the_button.svg){.diagram}
+![Diagram](./img/the_button.svg){.diagram}
 
 ## On the Subject of The Button
 > You might think that a button telling you to press it is pretty straightforward.
