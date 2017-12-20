@@ -26,13 +26,13 @@ $ defusal my_mod.md --name "My Cool Mod"
 
 ## Options
 
-`-n --name {name}` The name of your mod, this will be the page header as "On the Subject of {name}".  
+`-n --name {name}` The name of your mod, this will be the page header. 
 Defaults to `Mod`
 
 `-v --version {version}` The version to use in the header.  
 Defaults to `Mod`
 
-`-o --output {path}` The path of the final PDF page.  
+`-o --output {path}` The path of the final PDF page output.  
 Defaults to `./page.pdf`
 
 # Pages
