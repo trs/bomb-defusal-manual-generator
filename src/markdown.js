@@ -1,6 +1,5 @@
 const markdown = require('markdown-it')({
-  // html: true,
-  // xhtmlOut: true
+  html: true
 })
   .use(require('markdown-it-underline'))
   .use(require('markdown-it-multimd-table'))

@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./src/style.css">
+    <link rel="stylesheet" type="text/css" href="{{base_style}}" />
   </head>
   <body>
     <div class="page">
@@ -10,7 +9,9 @@
         <span>Keep Talking and Nobody Explodes {{version}}</span>
         <span>{{name}}</span>
       </div>
-      <div class="page-content">{{body}}</div>
+      <div class="page-content">
+        {{body}}
+      </div>
       <div class="page-footer"></div>
     </div>
   </body>

@@ -10,6 +10,7 @@ async function generateManual(fileMd, {
   version = 'Mod',
   outputPdf = './page.pdf'
 } = {}) {
+  outputPdf = path.resolve(outputPdf);
   const sourceMd = await _readFile(fileMd);
   const sourceHtml = parseMarkdown(sourceMd);
   const html = await _buildHtmlPage({
@@ -17,24 +18,25 @@ async function generateManual(fileMd, {
     name,
     version
   });
+
   const fileHtml = await _writeFile('./.temp.html', html);
-  const urlHtml = new URL(fileHtml, 'file://');
+  const {href: urlHtml} = new URL(fileHtml, 'file://');
 
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
-  await page.goto(urlHtml.href);
-
+  await page.goto(urlHtml);
   await page.pdf({path: outputPdf, format: 'A4'});
-  return Promise.all([ 
-    browser.close(),
-    // _deleteFile(fileHtml)
-  ]);
+  await browser.close();
+  await _deleteFile(fileHtml);
+  
+  console.log(outputPdf);
 }
 
 async function _buildHtmlPage(settings) {
   const baseHtml = await _readFile('./src/base.html');
 
   return baseHtml
+    .replace('{{base_style}}', './src/style.css')
     .replace('{{body}}', settings.body)
     .replace('{{version}}', settings.version)
     .replace('{{name}}', settings.name);
@@ -71,5 +73,8 @@ async function _writeFile(outFile, text) {
 module.exports = {
   generateManual,
 
-  _readFile
+  _buildHtmlPage,
+  _deleteFile,
+  _readFile,
+  _writeFile
 };
