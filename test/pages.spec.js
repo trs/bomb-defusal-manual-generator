@@ -8,7 +8,7 @@ describe('#Pages', function () {
     await app.generateManual('./pages/wires.md', {
       name: 'Wires',
       version: 'v. 1',
-      outputPdf: './test/pages/wires.pdf'
+      outputPdf: './pages/wires.pdf'
     });
   });
 
@@ -16,7 +16,7 @@ describe('#Pages', function () {
     await app.generateManual('./pages/the_button.md', {
       name: 'The Button',
       version: 'v. 1',
-      outputPdf: './test/pages/the_button.pdf'
+      outputPdf: './pages/the_button.pdf'
     });
   });
 });
