@@ -1,4 +1,4 @@
-![Diagram](./img/wires.svg){.diagram}
+![Diagram](./test/img/wires.svg){.diagram}
 
 ## On the Subject of Wires
 > Wires are the lifeblood of electronics! Wait, no, electricity is the lifeblood.

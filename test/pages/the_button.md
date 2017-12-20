@@ -1,10 +1,10 @@
-![Diagram](./img/the_button.svg){.diagram}
+![Diagram](./test/img/the_button.svg){.diagram}
 
 ## On the Subject of The Button
 > You might think that a button telling you to press it is pretty straightforward.
-> That’s the kind of thinking that gets people exploded.
+> That's the kind of thinking that gets people exploded.
 
-*See Appendix A for indicator identification reference.* 
+*See Appendix A for indicator identification reference.*<br/>
 *See Appendix B for battery identification reference.*
 
 Follow these rules in the order they are listed. Perform the

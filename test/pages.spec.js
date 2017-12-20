@@ -8,7 +8,7 @@ describe('#Pages', function () {
     await app.generateManual('./pages/wires.md', {
       name: 'Wires',
       version: 'v. 1',
-      outputPdf: './pages/wires.pdf'
+      outputPdf: './test/pages/wires.pdf'
     });
   });
 
@@ -16,15 +16,7 @@ describe('#Pages', function () {
     await app.generateManual('./pages/the_button.md', {
       name: 'The Button',
       version: 'v. 1',
-      outputPdf: './pages/the_button.pdf'
-    });
-  });
-
-  it('On the Subject of Keypads' , async function () {
-    await app.generateManual('./pages/keypads.md', {
-      name: 'Keypads',
-      version: 'v. 1',
-      outputPdf: './pages/keypads.pdf'
+      outputPdf: './test/pages/the_button.pdf'
     });
   });
 });
