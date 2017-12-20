@@ -37,5 +37,5 @@ Defaults to `./page.pdf`
 
 # Pages
 
-Pages are built using markdown, check out [pages](./test/pages) for some examples.  
+Pages are built using markdown, check out [pages](./pages) for some examples.  
 Parsing is done using [markdown-it](https://github.com/markdown-it/markdown-it) with the plugins [markdown-it-attrs](https://github.com/arve0/markdown-it-attrs), [markdown-it-multimd-table](https://github.com/RedBug312/markdown-it-multimd-table), and [markdown-it-underline](https://github.com/arve0/markdown-it-underline).
