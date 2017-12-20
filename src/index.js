@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { URL } = require('url');
+const {URL} = require('url');
 const puppeteer = require('puppeteer');
 
 const {parseMarkdown} = require('./markdown');
@@ -28,7 +28,7 @@ async function generateManual(fileMd, {
   await page.pdf({path: outputPdf, format: 'A4'});
   await browser.close();
   await _deleteFile(fileHtml);
-  
+
   console.log(outputPdf);
 }
 
@@ -42,12 +42,12 @@ async function _buildHtmlPage(settings) {
     .replace('{{name}}', settings.name);
 }
 
-async function _deleteFile(path) {
+async function _deleteFile(filePath) {
   return new Promise((resolve, reject) => {
-    fs.unlink(path, err => {
+    fs.unlink(filePath, err => {
       if (err) return reject(err);
       return resolve();
-    })
+    });
   });
 }
 

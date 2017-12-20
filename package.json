@@ -1,6 +1,6 @@
 {
   "name": "defusal",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Generate Bomb Defusal Manual Pages",
   "main": "src/index.js",
   "bin": {
@@ -11,7 +11,13 @@
     "src/"
   ],
   "scripts": {
-    "test": "mocha test/**/*.spec.js --timeout 0 --ui bdd"
+    "test": "mocha test/**/*.spec.js --timeout 0 --ui bdd",
+    "lint": "eslint -c ./.eslintrc \"src/**/*.js\" \"test/**/*.js\" \"bin/**/*.js\"",
+    "lint:fix": "eslint --fix -c ./.eslintrc \"src/**/*.js\" \"test/**/*.js\" \"bin/**/*.js\"",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "release": {
+    "verifyConditions": "condition-circle"
   },
   "repository": {
     "type": "git",
@@ -41,6 +47,13 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "eslint": "^4.13.1",
-    "mocha": "^4.0.1"
+    "eslint-plugin-mocha": "^4.11.0",
+    "eslint-plugin-node": "^5.2.1",
+    "mocha": "^4.0.1",
+    "semantic-release": "^8.2.0"
+  },
+  "engines": {
+    "node": ">8",
+    "npm": ">5"
   }
 }
