@@ -33,10 +33,12 @@ async function generateManual(fileMd, {
 }
 
 async function _buildHtmlPage(settings) {
-  const baseHtml = await _readFile('./src/base.html');
+  const baseHtmlPath = path.join(__dirname, './base.html');
+  const cssPath = path.join(__dirname, './style.css');
+  const baseHtml = await _readFile(baseHtmlPath);
 
   return baseHtml
-    .replace('{{base_style}}', './src/style.css')
+    .replace('{{base_style}}', cssPath)
     .replace('{{body}}', settings.body)
     .replace('{{version}}', settings.version)
     .replace('{{name}}', settings.name);
